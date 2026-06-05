@@ -1,4 +1,12 @@
-// South Georgia Lawn & Landscape — JavaScript
+﻿// Scroll-to-top button
+const scrollBtn = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', () => {
+  scrollBtn.classList.toggle('visible', window.scrollY > 400);
+});
+scrollBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+// South Georgia Lawn & Landscape â€” JavaScript
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
 const hamburger = document.getElementById('hamburger');
@@ -12,10 +20,10 @@ if (quoteForm) {
   quoteForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const btn = document.getElementById('submit-quote-btn');
-    btn.textContent = '✅ Quote Request Sent! We\'ll call you within 24 hours.';
+    btn.textContent = 'âœ… Quote Request Sent! We\'ll call you within 24 hours.';
     btn.style.background = '#27ae60';
     btn.disabled = true;
-    setTimeout(() => { btn.textContent = 'Request My Free Quote 🌿'; btn.style.background = ''; btn.disabled = false; quoteForm.reset(); }, 5000);
+    setTimeout(() => { btn.textContent = 'Request My Free Quote ðŸŒ¿'; btn.style.background = ''; btn.disabled = false; quoteForm.reset(); }, 5000);
   });
 }
 
@@ -26,3 +34,4 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.service-card, .why-card, .testi-card, .area-item, .perk').forEach(el => {
   el.style.opacity = '0'; el.style.transform = 'translateY(25px)'; el.style.transition = 'opacity 0.55s ease, transform 0.55s ease'; observer.observe(el);
 });
+
